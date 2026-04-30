@@ -40,7 +40,7 @@ void saveCsv(const std::vector<EllipseParams>& ellipses, const std::string& file
 
 int main(int argc, char** argv) {
     if (argc < 2) {
-        std::cerr << "TO USE: " << argv[0] << " path_to_image" << std::endl;
+        std::cerr << "TO USE: " << argv[0] << " path/to/image.jpg" << std::endl;
         return -1;
     }
 

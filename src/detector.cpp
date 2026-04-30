@@ -19,7 +19,7 @@ cv::Mat Detector::toBinary(const cv::Mat& image) {
     cv::findContours(bin_L, contours, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_NONE);
     cv::drawContours(bin_L, contours, -1, cv::Scalar(255), cv::FILLED);
 
-    cv::Mat kernel = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(7, 7));
+    cv::Mat kernel = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(15, 15));
     cv::morphologyEx(bin_L, bin_L, cv::MORPH_OPEN, kernel);
 
     return bin_L;
