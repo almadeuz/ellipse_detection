@@ -7,13 +7,12 @@
 class Detector {
 public:
     Detector();
-
+    // Производит бинаризацию входного изображения.
+    cv::Mat toBinary(const cv::Mat& image); 
     // Извлекает контуры и запускает цикл обработки
     std::vector<EllipseParams> detectEllipses(const cv::Mat& image);
 
 private:
-    // Производит бинаризацию входного изображения.
-    cv::Mat toBinary(const cv::Mat& image);
 
     Config config;
     Segmenter segmenter;

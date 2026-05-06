@@ -12,11 +12,11 @@ static int cont = 0;
 struct Config {
     int min_axis_length = 6;
     double surface_threshold = 0.875;
-    double area_ratio_threshold = 0.08;
+    double area_ratio_threshold = 0.03;
     double convexity_tolerance = CV_PI / 18.0;
     double join_distance_factor = 0.25;
     double azimuth_diff = CV_PI / 18.0;
-    double max_aspect_ratio = 4.0;
+    double max_aspect_ratio = 6.0;
 
 };
 
