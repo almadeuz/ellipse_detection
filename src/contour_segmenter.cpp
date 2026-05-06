@@ -278,13 +278,11 @@ std::vector<SegmentGroup> Segmenter::groupConvexSegments(const std::vector<Conto
             }
         }
 
-        if (merged.points.size() >= 5) {
-            merged.start_idx = merged.contour_indices.front();
-            merged.end_idx = merged.contour_indices.back();
-            SegmentGroup group;
-            group.addSegment(merged);
-            results.push_back(group);
-        }
+        merged.start_idx = merged.contour_indices.front();
+        merged.end_idx = merged.contour_indices.back();
+        SegmentGroup group;
+        group.addSegment(merged);
+        results.push_back(group);
     }
 
     return results;

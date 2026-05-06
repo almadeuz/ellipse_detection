@@ -30,6 +30,8 @@ void saveCsv(const std::vector<EllipseParams>& ellipses, const std::string& file
     for (const auto& e : ellipses) {
         double major = std::max(e.size.width, e.size.height);
         double minor = std::min(e.size.width, e.size.height);
+        double ar = (minor > 0) ? major / minor : 0.0;
+        double area = CV_PI * (major / 2.0) * (minor / 2.0);
 
         f << e.id << "," << e.center.x << "," << e.center.y << ","
           << major << "," << minor << "," << e.angle << std::endl;
@@ -40,7 +42,7 @@ void saveCsv(const std::vector<EllipseParams>& ellipses, const std::string& file
 
 int main(int argc, char** argv) {
     if (argc < 2) {
-        std::cerr << "TO USE: " << argv[0] << " path/to/image.jpg" << std::endl;
+        std::cerr << "TO USE: " << argv[0] << " path_to_image" << std::endl;
         return -1;
     }
 
