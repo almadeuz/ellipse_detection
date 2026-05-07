@@ -4,14 +4,11 @@ project(detector)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(OpenCV REQUIRED)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 
-add_executable(detector
-    main.cpp
-    detector.cpp
-    contour_segmenter.cpp
-    ellipse_filter.cpp
-)
+add_executable(detector src/main.cpp src/detector.cpp src/ellipse_filter.cpp src/contour_segmenter.cpp)
+
+find_package(OpenCV REQUIRED)
 
 target_link_libraries(detector ${OpenCV_LIBS})
 
